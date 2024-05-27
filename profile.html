@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandeep Pala - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-content">
+            <img src="Image.jpg" alt="Sandeep Pala" id="profile-pic">
+            <div class="header-text">
+                <h1>Sandeep Pala</h1>
+                <h2>Software Engineer</h2>
+            </div>
+        </div>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <p><b>Highly skilled and innovative</b> software engineer with 3+ years of experience in developing robust software solutions. <b>Motivated and results-driven</b> junior-level software engineer with a passion for solving complex problems and a strong foundation in programming principles. Seeking a challenging position where I can contribute my technical skills and <b>enthusiasm for continuous learning</b> to drive innovative solutions and grow as a valuable asset to the team.</p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <div>
+            <div class="skill-ring" data-skill="Java" data-level="95"></div>
+            <div class="skill-ring" data-skill="Python" data-level="85"></div>
+            <div class="skill-ring" data-skill="Ruby" data-level="95"></div>
+        </div>
+        <div>
+            <div class="skill-ring" data-skill="Vue JS" data-level="90"></div>
+            <div class="skill-ring" data-skill="React JS" data-level="65"></div>
+        </div>
+        <div>
+            <div class="skill-ring" data-skill="MySQL" data-level="95"></div>
+            <div class="skill-ring" data-skill="NoSQL" data-level="70"></div>
+            <div class="skill-ring" data-skill="RESTful API" data-level="95"></div>
+            <div class="skill-ring" data-skill="AWS" data-level="80"></div>
+            <div class="skill-ring" data-skill="Google Cloud" data-level="95"></div>
+        </div>
+        
+        <!-- Add more skill rings here -->
+    </section>
+
+    <section id="experience">
+        <h2>Experience</h2>
+        <div class="experience-gallery">
+            <div class="exp-slide active">
+                <h3>ProDIGIQ Inc., Thousand Oaks, California  (March 2023 - Present)</h3>
+                <p>Associate Software Engineer</p>
+                
+                <ul>
+                    - Enhanced a feature to <b>improve performance by almost 3x times</b> that was originally affecting project servers to slow down frequently 
+                </ul>
+                <ul>
+                    - Worked end-to-end on a <b>critical time sensitive</b> project for one of our <b>biggest client yet</b> 
+                </ul>
+                <ul>
+                    - <b>Rapid growth</b> to transition into a <b>reliable and senior engineer</b> that resulted in getting a new responsibilty of overseeing a new empolyee
+                </ul>
+                <ul>
+                    Advanced Skills: Ruby on Rails, Vue JS, MySQL, Git, AWS, Rest API (payment gateways integration), SSO
+                </ul>
+            </div>
+
+            <div class="exp-slide">
+                <h3>Singapore Infotech Private Limited, Bangalore, India  (March 2019 - December 2020)</h3>
+                <p>Full Stack Software Development Intern</p>
+                
+                <ul>
+                    Involved in the <b>complete implementation process</b> of the company's biggest product (to automate supply-chain process) with features like data extraction from uploaded documents (with Google Cloud Vision API), generating invoices, certificates and other documents and microservices architecture with Rest API
+                </ul>
+                <ul>
+                    Implemented and <b>optimized algorithms</b> to improve system efficiency and performance by <b>almost 50%</b>
+                </ul>
+                <ul>
+                    <b>Mentored and coached</b> junior developers, fostering their professional growth and cultivating a <b>collaborative</b> work environment
+                </ul>
+                <ul>
+                    Advanced Skills: Java, SQL, JavaScript, API Gateway, Google Cloud Services, Optical Character Recognition, Agile
+                </ul>
+            </div>
+
+            <div class="exp-slide">
+                <h3>Planbook Inc., Champaign, Illinois  (Feb 2022 - August 2022)</h3>
+                <p>Full Stack Software Development Intern</p>
+                
+                <ul>
+                    Implementing new features like class scheduler, messaging system within the application, calendar for lesson scheduling, assignment upload and grading, etc., using Vuex, routing, API gateways and other technologies
+                </ul>
+                <ul>
+                    Advanced Skills: Web Development, Java, SQL, JavaScript, Vue.js, Typescript, AWS, Restful API, SDLC
+                </ul>
+            </div>
+
+            
+            <button class="exp-prev">Previous</button>
+            <button class="exp-next">Next</button>
+        </div>
+        <!-- Add other experiences here -->
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-gallery">
+            <div class="slide active">
+                <h3>Course Registration System</h3>
+                <a href="https://spalas3.pythonanywhere.com">Link</a>
+                <p> <b>username:</b> coworker, <b>password:</b> sandeepProject2024!</p>
+                <p>Created a business web application that allows users to manage students classes based on availabilities. The teacher/staff user will have the ability to create/edit courses available, registration, course requirements etc.</p>
+            </div>
+            <div class="slide">
+                <h3>University Information System</h3>
+                <p>Created an android mobile app that serves as a platform for the students and faculty of the University to get fast, accurate and reliable information regarding the different events taking place inside the university</p>
+            </div>
+            <div class="slide">
+                <h3>Rewards Processor</h3>
+                <a href="https://github.com/sandeepyadav3/Rewards-Processor">Github</a>
+                <p>Created an API service using Flask to process a given receipt in JSON and calculate the total number of reward points that can be awarded to it based on some of the rules defined (can be found in the README.md file in GitHub)</p>
+            </div>
+            <div class="slide">
+                <h3>Fake Review Detection and Prevention using Classification Techniques</h3>
+                <p>Developed a model for preventing fake reviews, using detection and authentication techniques such as device detection and bot detection. The classification algorithm, Random forest, had the highest accuracy with 73.33%. Also, presented and published this paper with Springer at ICT4SD Springer Proceedings (2019)</p>
+            </div>
+            <!-- Add more slides here -->
+            <button class="prev">Previous</button>
+            <button class="next">Next</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>Contact: spala5704@gmail.com | Phone: (217) 904-2933 | <a href="https://www.linkedin.com/in/spalas3/" target="_blank"><img src="LinkedIn.png" class="linkedin-img"/></a></p>
+    </footer>
+    <footer>
+        <p>&copy; 2024 Sandeep Pala. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/progressbar.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
