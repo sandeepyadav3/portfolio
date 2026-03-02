@@ -70,4 +70,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
         observer.observe(ringEl);
     });
+
+    // 3. Experience Timeline Accordion
+    const timelineHeaders = document.querySelectorAll('.timeline-header');
+
+    timelineHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            const item = header.parentElement;
+            
+            // Optional: Close other open items (uncomment to behave like an exclusive accordion)
+            // document.querySelectorAll('.timeline-item').forEach(otherItem => {
+            //     if (otherItem !== item) otherItem.classList.remove('active');
+            // });
+
+            // Toggle the clicked item
+            item.classList.toggle('active');
+        });
+    });
 });
