@@ -1,133 +1,73 @@
-$(document).ready(function() {
-  // Skill Progress Animation
-  $('.progress-bar .progress').each(function() {
-      var width = $(this).css('width');
-      $(this).css('width', '0');
-      $(this).animate({ width: width }, 2000);
-  });
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // 1. Project Gallery Slider
+    const slides = document.querySelectorAll('.project-gallery .slide');
+    let currentIndex = 0;
 
-  // Experience Gallery Slider
-  var exSlides = $('.experience-gallery .exp-slide');
-  var currentExpIndex = 0;
+    function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        slides[index].classList.add('active');
+    }
 
-  function showExpSlide(index) {
-    exSlides.removeClass('active');
-    exSlides.eq(index).addClass('active');
-  }
+    const nextBtn = document.querySelector('.next');
+    const prevBtn = document.querySelector('.prev');
 
-  $('.exp-next').click(function() {
-      currentExpIndex = (currentExpIndex + 1) % exSlides.length;
-      showExpSlide(currentExpIndex);
-  });
+    if (nextBtn && prevBtn) {
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % slides.length;
+            showSlide(currentIndex);
+        });
 
-  $('.exp-prev').click(function() {
-      currentExpIndex = (currentExpIndex - 1 + exSlides.length) % exSlides.length;
-      showExpSlide(currentExpIndex);
-  });
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            showSlide(currentIndex);
+        });
+    }
 
-  // Project Gallery Slider
-  var slides = $('.project-gallery .slide');
-  var currentIndex = 0;
+    // 2. Skill Rings (Using Vanilla JS with ProgressBar.js)
+    const skillRings = document.querySelectorAll('.skill-ring');
+    
+    skillRings.forEach(ringEl => {
+        const skill = ringEl.getAttribute('data-skill');
+        const level = parseInt(ringEl.getAttribute('data-level'), 10);
+        
+        // Create inner elements
+        const label = document.createElement('div');
+        label.className = 'label';
+        label.innerText = skill;
 
-  function showSlide(index) {
-      slides.removeClass('active');
-      slides.eq(index).addClass('active');
-  }
+        const levelText = document.createElement('div');
+        levelText.className = 'level-text';
+        levelText.innerText = `${level}%`;
 
-  $('.next').click(function() {
-      currentIndex = (currentIndex + 1) % slides.length;
-      showSlide(currentIndex);
-  });
+        ringEl.appendChild(levelText);
+        ringEl.appendChild(label);
 
-  $('.prev').click(function() {
-      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-      showSlide(currentIndex);
-  });
+        // Initialize ProgressBar
+        const circle = new ProgressBar.Circle(ringEl, {
+            strokeWidth: 6,
+            color: '#2563eb', // Matches your new primary CSS variable
+            trailColor: '#e5e7eb',
+            trailWidth: 6,
+            easing: 'easeInOut',
+            duration: 1400,
+            from: { color: '#93c5fd', width: 6 },
+            to: { color: '#2563eb', width: 6 },
+            step: function(state, circle) {
+                circle.path.setAttribute('stroke', state.color);
+            }
+        });
 
-  // Initial display
-  showSlide(currentIndex);
+        // Use IntersectionObserver to animate only when scrolled into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    circle.animate(level / 100);
+                    observer.unobserve(ringEl); // Animate only once
+                }
+            });
+        }, { threshold: 0.5 });
 
-  // Skills Hover Effect
-  $('.skill').hover(
-      function() {
-          var description = $(this).data('description');
-          $('#skill-description').text(description).show();
-      },
-      function() {
-          $('#skill-description').hide();
-      }
-  );
-
-  // Skills Chart
-  // var ctx = document.getElementById('skillsChart').getContext('2d');
-  // var skillsChart = new Chart(ctx, {
-  //     type: 'bar',
-  //     data: {
-  //         labels: ['Java', 'Ruby', 'Python', 'JavaScript', 'C++'],
-  //         datasets: [{
-  //             label: 'Proficiency',
-  //             data: [90, 85, 80, 75, 70],
-  //             backgroundColor: [
-  //                 'rgba(75, 192, 192, 0.2)',
-  //                 'rgba(54, 162, 235, 0.2)',
-  //                 'rgba(255, 206, 86, 0.2)',
-  //                 'rgba(153, 102, 255, 0.2)',
-  //                 'rgba(255, 159, 64, 0.2)'
-  //             ],
-  //             borderColor: [
-  //                 'rgba(75, 192, 192, 1)',
-  //                 'rgba(54, 162, 235, 1)',
-  //                 'rgba(255, 206, 86, 1)',
-  //                 'rgba(153, 102, 255, 1)',
-  //                 'rgba(255, 159, 64, 1)'
-  //             ],
-  //             borderWidth: 1
-  //         }]
-  //     },
-  //     options: {
-  //         scales: {
-  //             y: {
-  //                 beginAtZero: true
-  //             }
-  //         }
-  //     }
-  // });
-
-  // Skill Rings
-  $('.skill-ring').each(function() {
-      var skill = $(this).data('skill');
-      var level = $(this).data('level');
-      var ring = $('<div class="ring"></div>');
-      var label = $('<div class="label" style="color: #4caf50"></div>').text(skill);
-      var levelText = $('<div class="level-text"></div>').text(level + '%');
-
-      ring.append(levelText).append(label);
-      $(this).append(ring);
-
-      var circle = new ProgressBar.Circle(ring[0], {
-          strokeWidth: 6,
-          color: '#4caf50',
-          trailColor: '#eee',
-          trailWidth: 1,
-          easing: 'easeInOut',
-          duration: 1400,
-          from: { color: '#FFEA82', width: 1 },
-          to: { color: '#ED6A5A', width: 6 },
-          // Set default step function for all animate calls
-          step: function(state, circle) {
-              circle.path.setAttribute('stroke', state.color);
-              circle.path.setAttribute('stroke-width', state.width);
-
-              // var value = Math.round(circle.value() * 100);
-              // if (value === 0) {
-              //     circle.setText('');
-              // } else {
-              //     circle.setText(value + '%');
-              // }
-
-          }
-      });
-
-      circle.animate(level / 100);
-  });
+        observer.observe(ringEl);
+    });
 });
