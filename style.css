@@ -1,11 +1,11 @@
 /* --- CSS Variables (Design System) --- */
 :root {
-    --primary-color: #2563eb; 
-    --primary-hover: #1d4ed8;
-    --bg-color: #f9fafb;
-    --surface-color: #ffffff;
+    --primary-color: #0f766e;
+    --primary-hover: #115e59;
+    --bg-color: #f6f8fa;
+    --surface-color: #ffffff; 
     --text-main: #1f2937;
-    --text-muted: #4b5563;
+    --text-muted: #4b5563;    
     --font-heading: 'Montserrat', sans-serif;
     --font-body: 'Open Sans', sans-serif;
 }
