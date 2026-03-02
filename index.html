@@ -31,32 +31,24 @@
 
     <section id="about">
         <h2>About Me</h2>
-        <div class="about-content">
-            <p><b>Software Engineer building scalable end-to-end systems in fast-moving startup environments. I specialize in high-ownership 0->1 product development and cloud-native architecture. Highly skilled and innovative</b></p>
+        <div class="container about-content">
+            <p><b>Software Engineer building scalable end-to-end systems in fast-moving startup environments. I specialize in high-ownership 0->1 product development and cloud-native architecture.</b></p>
         </div>
     </section>
 
     <section id="skills">
         <h2>Skills</h2>
-        <div>
+        <div class="skills-container">
             <div class="skill-ring" data-skill="Java" data-level="95"></div>
             <div class="skill-ring" data-skill="Python" data-level="90"></div>
             <div class="skill-ring" data-skill="Ruby" data-level="95"></div>
-            <div class="skill-ring" data-skill="Go (Golang)" data-level="75"></div>
-        </div>
-        <div>
+            <div class="skill-ring" data-skill="Go" data-level="75"></div>
             <div class="skill-ring" data-skill="Vue JS" data-level="90"></div>
             <div class="skill-ring" data-skill="Typescript" data-level="85"></div>
             <div class="skill-ring" data-skill="React JS" data-level="75"></div>
-        </div>
-        <div>
             <div class="skill-ring" data-skill="MySQL" data-level="95"></div>
-            <div class="skill-ring" data-skill="NoSQL" data-level="75"></div>
-            <div class="skill-ring" data-skill="RESTful API" data-level="95"></div>
             <div class="skill-ring" data-skill="AWS" data-level="80"></div>
-            <div class="skill-ring" data-skill="Google Cloud" data-level="95"></div>
-            <div class="skill-ring" data-skill="NodeJS" data-level="75"></div>
-            <div class="skill-ring" data-skill=".NET" data-level="75"></div>
+            <div class="skill-ring" data-skill="GCP" data-level="95"></div>
         </div>
     </section>
 
@@ -64,79 +56,44 @@
         <h2>Work Experience</h2>
         <div class="container">
             <h3>Airport Gate Operations Platform (0->1)</h3>
-            <p class="subtitle">
-                End-to-end architecture and backend ownership of a mission-critical airport operations system.
-            </p>
+            <p class="subtitle">End-to-end architecture and backend ownership of a mission-critical airport operations system.</p>
         
-            <section>
-                <h4>Overview</h4>
-                <p>
-                    I led the development of a production-grade airport gate operations platform built from scratch 
-                    for an enterprise client. The system manages real-time gate assignments, integrates external aviation 
-                    systems, and supports operational workflows across airport stakeholders.
-                </p>
-            </section>
-        
-            <section>
-                <h4>The Problem</h4>
-                <p>
-                    Airport operations relied on fragmented systems and manual coordination. The new platform needed to:
-                </p>
-                <ul>
-                    <li>Ingest real-time flight data from external aviation systems</li>
-                    <li>Integrate with financial and lease management platforms</li>
-                    <li>Maintain reliability during peak operational loads</li>
-                    <li>Support extensibility for multiple airport clients</li>
-                </ul>
-            </section>
-        
-            <section>
-                <h4>My Role & Ownership</h4>
-                <ul>
-                    <li>Designed the microservices architecture and defined service boundaries</li>
-                    <li>Built backend services and REST APIs</li>
-                    <li>Managed AWS infrastructure (EC2, S3, VPC, CodeDeploy)</li>
-                    <li>Configured Nginx reverse proxies and production routing</li>
-                    <li>Identified and resolved performance bottlenecks in production</li>
-                    <li>Worked directly with stakeholders to translate operational needs into technical design</li>
-                </ul>
-            </section>
-        
-            <section>
-                <h4>Architecture & Technical Approach</h4>
-                <ul>
-                    <li>Microservices architecture with modular, independently scalable services</li>
-                    <li>Clear separation of gate management, flight ingestion, financial integration, and configuration services</li>
-                    <li>REST-based inter-service communication</li>
-                    <li>Database indexing and query optimization for performance-sensitive workflows</li>
-                    <li>Automation of repetitive operational processes</li>
-                </ul>
-            </section>
-        
-            <section>
-                <h4>Performance & Impact</h4>
-                <ul>
-                    <li>Improved backend performance by ~3x through workflow and database optimization</li>
-                    <li>Eliminated recurring production slowdowns</li>
-                    <li>Automated legacy module migration (12–16 hours -> under 2 minutes)</li>
-                    <li>Reduced onboarding effort for new clients through configurable system settings</li>
-                </ul>
-        
-                <div class="highlight">
-                    <strong>Business Outcome:</strong> Delivered a scalable, production-ready airport gate management 
-                    platform with improved operational efficiency and increased engineering leverage.
+            <div class="experience-grid">
+                <div class="card">
+                    <h4>Overview & Problem</h4>
+                    <p>Led the development of a production-grade airport platform built from scratch. Operations previously relied on fragmented systems. The new platform needed to ingest real-time flight data, integrate with financial platforms, and maintain reliability during peak loads.</p>
                 </div>
-            </section>
-        
-            <section>
-                <h4>Key Learnings</h4>
-                <ul>
-                    <li>Clear service boundaries prevent scaling bottlenecks</li>
-                    <li>Measure before optimizing — observability drives effective performance tuning</li>
-                    <li>Automation creates leverage in small engineering teams</li>
-                    <li>Architecture decisions must align with business constraints</li>
-                </ul>
-            </section>
+            
+                <div class="card">
+                    <h4>My Role & Ownership</h4>
+                    <ul>
+                        <li>Designed microservices architecture and service boundaries.</li>
+                        <li>Built backend services and REST APIs.</li>
+                        <li>Managed AWS infrastructure (EC2, S3, VPC, CodeDeploy).</li>
+                        <li>Configured Nginx reverse proxies and production routing.</li>
+                    </ul>
+                </div>
+            
+                <div class="card">
+                    <h4>Architecture</h4>
+                    <ul>
+                        <li>Microservices with modular, independently scalable services.</li>
+                        <li>REST-based inter-service communication.</li>
+                        <li>Database indexing and query optimization for performance.</li>
+                    </ul>
+                </div>
+            
+                <div class="card highlight-card">
+                    <h4>Performance & Impact</h4>
+                    <ul>
+                        <li>Improved backend performance by ~3x through optimization.</li>
+                        <li>Automated legacy module migration (16 hours -> under 2 mins).</li>
+                    </ul>
+                    <div class="highlight">
+                        <strong>Outcome:</strong> Delivered a scalable, production-ready platform with improved efficiency and engineering leverage.
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -145,38 +102,34 @@
         <div class="project-gallery">
             <div class="slide active">
                 <h3>Course Registration System</h3>
-                <a href="https://spalas3.pythonanywhere.com">Link</a>
-                <p> <b>username:</b> coworker, <b>password:</b> sandeepProject2024!</p>
-                <p>Created a business web application that allows users to manage students classes based on availabilities. The teacher/staff user will have the ability to create/edit courses available, registration, course requirements etc.</p>
-            </div>
-            <div class="slide">
-                <h3>University Information System</h3>
-                <p>Created an android mobile app that serves as a platform for the students and faculty of the University to get fast, accurate and reliable information regarding the different events taking place inside the university</p>
+                <a href="https://spalas3.pythonanywhere.com" target="_blank">View Project</a>
+                <p>Created a business web application to manage student class availabilities. Features include course creation, registration, and requirement tracking.</p>
             </div>
             <div class="slide">
                 <h3>Rewards Processor</h3>
-                <a href="https://github.com/sandeepyadav3/Rewards-Processor">Github</a>
-                <p>Created an API service using Flask to process a given receipt in JSON and calculate the total number of reward points that can be awarded to it based on some of the rules defined (can be found in the README.md file in GitHub)</p>
+                <a href="https://github.com/sandeepyadav3/Rewards-Processor" target="_blank">View GitHub</a>
+                <p>Created a Flask API service to process receipt JSONs and calculate reward points based on defined rule sets.</p>
             </div>
             <div class="slide">
-                <h3>Fake Review Detection and Prevention using Classification Techniques</h3>
-                <p>Developed a model for preventing fake reviews, using detection and authentication techniques such as device detection and bot detection. The classification algorithm, Random forest, had the highest accuracy with 73.33%. Also, presented and published this paper with Springer at ICT4SD Springer Proceedings (2019)</p>
+                <h3>Fake Review Detection</h3>
+                <p>Developed a Random Forest model (73.33% accuracy) for preventing fake reviews using device and bot detection. Published with Springer (2019).</p>
             </div>
-            <!-- Add more slides here -->
-            <button class="prev">Previous</button>
-            <button class="next">Next</button>
+            
+            <button class="slider-btn prev">&#10094;</button>
+            <button class="slider-btn next">&#10095;</button>
         </div>
     </section>
 
-    <footer>
-        <p>Contact: spala5704@gmail.com | Phone: (217) 904-2933 | <a href="https://www.linkedin.com/in/spalas3/" target="_blank"><img src="LinkedIn.png" class="linkedin-img"/></a></p>
-    </footer>
-    <footer>
-        <p>&copy; 2026 Sandeep Pala. All rights reserved.</p>
+    <footer id="contact">
+        <div class="container">
+            <p>Contact: spala5704@gmail.com | Phone: (217) 904-2933</p>
+            <a href="https://www.linkedin.com/in/spalas3/" target="_blank">
+                <img src="LinkedIn.png" alt="LinkedIn" class="linkedin-img"/>
+            </a>
+            <p class="copyright">&copy; 2026 Sandeep Pala. All rights reserved.</p>
+        </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/progressbar.js"></script>
     <script src="scripts.js"></script>
 </body>
